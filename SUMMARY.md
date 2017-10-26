@@ -6,4 +6,7 @@
 
 ## Methods
 
+* [Tickets](tickets.md)
+  * [Creating a ticket](tickets/creating-a-ticket.md)
 * [Defining Methods](methods.md)
+
