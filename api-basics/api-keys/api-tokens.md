@@ -9,18 +9,17 @@ You would use API tokens when you want to have your agents authorize apps that w
 * Browser extensions
 * "Log in with Deskpro" type workflows
 
-There are two methods to generate API Tokens.
+There are two methods to generate API Tokens. The recommended method is with [OAuth](/api-basics/api-keys/oauth.md). However, there's a [legacy token exchange](/api-basics/api-keys/api-tokens/token-exchange-endpoint.md) method that can be used as well.
 
-## Recommended: OAuth
+## Differences between API Keys and API Tokens
 
-The best way and most secure way to obtain tokens is through OAuth. OAuth is a well-established standard and is widely used (e.g. Google, Facebook, Twitter, etc).
+Functionally, there is little difference between keys and tokens other than the manner in which they're defined and, generally, the problem they're meant to solve.
 
-Generally, the way OAuth works is:
+* Keys are manually created by an admin and are perfect for scripts that need to perform tasks against the Deskpro API.
+* Conversely, tokens are created by end-users (by authenticating some how, such as with OAuth) and the token is given to the application so the app can perform actions on behalf of the user.
 
-1. Your app wants a token for a particular user and initiates an OAuth flow
-2. The user is redirected to Deskpro where the user logs-in to their account
-3. The user is asked to confirm they want to allow the connection
-4. Deskpro redirects the user back to your app
-5. Then you finish the OAuth2 flow and obtain a token for the user.
+There are a few other differences as well:
 
-For a more in-depth guide to using OAuth, follow through to the next section.
+* Tokens are always bound to the user that created it. i.e. there is no way to re-assign a token to another user or change the user on-the-fly. Indeed, there isn't any management interface for tokens at all.
+* Tokens and API keys both only allow the API to perform tasks that the user is allowed to perform. However, with API keys you can limit the endpoints with tags. This feature is not available to tokens.
+* Tokens can be revoked by end-users. For example, they can review a list of apps they have granted access to and decide to revoke access if they want to.
