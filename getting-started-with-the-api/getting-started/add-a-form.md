@@ -37,4 +37,8 @@ if ($isPosted) {
     <button type="submit">Submit</button>
 </form>
 ```
+
+{% common %}
+Opening this in your browser, you should see something like this:
+![](/assets/Screen Shot 2017-11-09 at 17.43.51.png)
 {% endmethod %}
