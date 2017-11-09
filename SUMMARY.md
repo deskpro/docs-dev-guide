@@ -21,4 +21,5 @@
 * [API Reference](api-basics/api-reference.md)
 * [Request Format](api-basics/request-format.md)
 * [Batch Requests](api-basics/batch-requests.md)
+* [Sideloading](api-basics/sideloading.md)
 
