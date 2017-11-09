@@ -27,4 +27,5 @@
 ## Getting Started with the API
 
 * [Getting Started with PHP](getting-started-with-the-api/getting-started.md)
+  * [Initialize API Client](getting-started-with-the-api/getting-started/initialize-api-client.md)
 
