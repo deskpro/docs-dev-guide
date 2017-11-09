@@ -1,5 +1,7 @@
 # Request Format
 
+<!-- toc -->
+
 The DeskPRO API is completely JSON.
 
 * You SHOULD send a `Accept: application/json` to confirm that your app is expecting JSON back from the API.
