@@ -13,4 +13,5 @@
 
 * [API Introduction](api-basics/api-introduction.md)
 * [Auth](api-basics/api-keys.md)
+  * API Keys
 
