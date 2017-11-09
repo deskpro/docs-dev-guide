@@ -13,5 +13,6 @@
 
 * [API Introduction](api-basics/api-introduction.md)
 * [Auth](api-basics/api-keys.md)
-  * API Keys
+  * [API Keys](api-basics/api-keys/api-keys.md)
+  * [Access Control with Tags](api-basics/api-keys/access-control-with-tags.md)
 
