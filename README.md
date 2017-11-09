@@ -13,7 +13,7 @@ Triggers are defined from within Deskpro itself and require no programming. More
 
 There are two ways you can integrate Deskpro into your website:
 
-* The most common is to add the _chat website widget_ to your website. This widget enables chat on any page you add it to, and it can fall-back to showing a new ticket form if no one is online or if chat is disabled. Refer to the Website Widget section for more details.
+* The most common is to add the _chat website widget_ to your website. This widget enables chat on any page you add it to, and it can fall-back to showing a new ticket form if no one is online or if chat is disabled. Refer to the [Website Widget](/embeddables/website-widget.md) section for more details.
 * The second method is to embed a _new ticket form_ directly into your website. This lets you put Deskpro new ticket form anywhere on your site. Refer to the New Ticket Form section for more details.
 
 ## Apps
