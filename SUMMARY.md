@@ -28,4 +28,5 @@
 
 * [Getting Started with PHP](getting-started-with-the-api/getting-started.md)
   * [Initialize API Client](getting-started-with-the-api/getting-started/initialize-api-client.md)
+  * [Add a form](getting-started-with-the-api/getting-started/add-a-form.md)
 

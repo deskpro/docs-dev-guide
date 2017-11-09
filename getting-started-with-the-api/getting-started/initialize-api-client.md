@@ -25,4 +25,16 @@ print_r($admin->getData());
 
 {% common %}
 Run this page in your browser and you'll see a bunch of JSON output. Something like:
+
+```json
+{
+    "data": {
+        "id": 1,
+        "name": "John Doe",
+        ...
+    },
+    "meta": {},
+    "linked": {}
+}
+```
 {% endmethod %}
