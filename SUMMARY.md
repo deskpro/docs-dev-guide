@@ -18,4 +18,6 @@
     * [OAuth](api-basics/auth/api-tokens/oauth.md)
     * [Token Exchange Endpoint](api-basics/auth/api-tokens/token-exchange-endpoint.md)
   * [Access Control](api-basics/auth/access-control.md)
+* [API Reference](api-basics/api-reference.md)
+* [Request Format](api-basics/request-format.md)
 
