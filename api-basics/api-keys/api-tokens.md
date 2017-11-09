@@ -21,5 +21,5 @@ Functionally, there is little difference between keys and tokens other than the 
 There are a few other differences as well:
 
 * Tokens are always bound to the user that created it. i.e. there is no way to re-assign a token to another user or change the user on-the-fly. Indeed, there isn't any management interface for tokens at all.
-* Tokens and API keys both only allow the API to perform tasks that the user is allowed to perform. However, with API keys you can limit the endpoints with tags. This feature is not available to tokens.
+* Tokens and API keys both only allow the API to perform tasks that the user is allowed to perform. However, with API keys you can further limit the endpoints with tags. This feature is not available to tokens.
 * Tokens can be revoked by end-users. For example, they can review a list of apps they have granted access to and decide to revoke access if they want to.
