@@ -15,6 +15,7 @@
 * [Auth](api-basics/api-keys.md)
   * [API Keys](api-basics/api-keys/api-keys.md)
   * [API Tokens](api-basics/api-keys/api-tokens.md)
+    * [Token Exchange Endpoint](api-basics/api-keys/api-tokens/token-exchange-endpoint.md)
   * [OAuth](api-basics/api-keys/oauth.md)
   * [Access Control with Tags](api-basics/api-keys/access-control-with-tags.md)
 
