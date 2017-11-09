@@ -22,4 +22,9 @@
 * [Request Format](api-basics/request-format.md)
 * [Batch Requests](api-basics/batch-requests.md)
 * [Sideloading](api-basics/sideloading.md)
+* [SDKs](api-basics/sdks.md)
+
+## Getting Started with the API
+
+* [Getting Started with PHP](getting-started-with-the-api/getting-started.md)
 
