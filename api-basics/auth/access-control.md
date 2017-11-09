@@ -1,5 +1,7 @@
-Access Control with Tags
-========================
+Access Control
+==============
+
+## Endpoint Tags
 
 Every API endpoint in the system has one or more "tags" associated with it. 
 
@@ -24,3 +26,15 @@ Examples:
 * `*, -tickets.*` all API endpoints except tickets
 * `tickets.*, -*.delete` all ticket endpoints but nothing to do with deleting
 * `tickets.tickets.list` only allow using the ticket listing API
+
+## Access Modes
+
+Most of the time, most APIs are available to any authenticated user of the API. But some APIs are locked down so they cannot be used except by users accessing the API by a specific method.
+
+You can view these limitations on each endpoint by viewing the [Full API Browser](#api-browser). In an expanded node for an endpoint, notice the value for "Applicable API Modes".
+
+* `key` is the msot common and means the API can be used via an API key
+* `token` means the API can be used by a token
+* `session` means that the API can be used from the browser if the agent/admin is currently logged in. These are typically APIs used by the agent or admin interface in DeskPRO itself.
+
+You almost never need to worry about this. Typically only internal APIs are marked as session or token only.
