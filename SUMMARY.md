@@ -20,4 +20,5 @@
   * [Access Control](api-basics/auth/access-control.md)
 * [API Reference](api-basics/api-reference.md)
 * [Request Format](api-basics/request-format.md)
+* [Batch Requests](api-basics/batch-requests.md)
 
