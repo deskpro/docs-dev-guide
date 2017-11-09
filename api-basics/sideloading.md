@@ -86,3 +86,50 @@ Example response with sideloaded objects
 }
 ```
 
+## Inline Sideloading
+
+Above you saw that sideloading loads related resources into the `linked` key in the response. That means it's still up to you, the developer, to map an ID from the `data` to the correct value in `linked`.
+
+To make this even easier, you can choose to _inline_ the data. This replaces the IDs with the actual object itself, making consuming requests very very easy.
+
+To enable inlining, you specify a query parameter `inline_sideloads=1`.
+
+Same example above but with inlining enabled:
+
+```
+curl -H "Authorization: key 1:CVRRGQ58QDX8H5B4W4RAJ978Q" \
+    http://example.com/api/v2/tickets/123?include=department,person&inline_sideloads=1
+```
+
+Example response with sideloaded objects
+
+```json
+{
+    "data": {
+        "id": 123,
+        "ref": "XXXX-0028-IOCC",
+        "department": {
+            "id": 20,
+            "title": "Support"
+        },
+        "person": {
+            "id": 59080,
+            "name": "Fionna Apple",
+            "primary_email": "user@example.com"
+        },
+        "agent": {
+            "id": 2,
+            "name": "John Doe",
+            "primary_email": "agent@example.com"
+        },
+        "status": "awaiting_user",
+        "subject": "Example Ticket"
+    },
+    "meta": [],
+    "linked": {}
+}
+```
+
+Inlining can make your life easier, but it comes at the cost of _data duplication_. For example, if you loading a list of 100 tickets, then the same agent might be assigned to many different tickets. Inlining would copy the agent data in multiple places which would increase the size of the response considerably.
+
+So it's often beneficial to keep the default behaviour and link IDs to `linked` objects in your application logic.
