@@ -24,4 +24,4 @@ You can get starting writing apps in just a few minutes. If you're interested in
 
 ## API
 
-Deskpro's fully-featured API lets you perform almost anything you could normally do via the web interface. Continue to the API section for more details.
+Deskpro's fully-featured API lets you perform almost anything you could normally do via the web interface. Continue to the [API section](/api-basics/api-introduction.md) for more details.
