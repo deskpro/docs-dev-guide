@@ -4,7 +4,7 @@ SDKs
 Using an SDK makes it easier to consume the Deskpro API from your favourite language.
 
 * PHP: https://github.com/deskpro/deskpro-api-client-php
-* NodeJS: _Coming soon_
+* JavaScript/NodeJS: https://github.com/deskpro/deskpro-api-client-javascript
 * Python: _Coming soon_
 * Ruby: _Coming soon_
 * Java: _Coming soon_

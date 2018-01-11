@@ -26,8 +26,11 @@
 
 ## Getting Started with the API
 
-* [Getting Started with PHP](getting-started-with-the-api/getting-started.md)
-  * [Initialize API Client](getting-started-with-the-api/getting-started/initialize-api-client.md)
-  * [Add a form](getting-started-with-the-api/getting-started/add-a-form.md)
-  * [Create a ticket with the API](getting-started-with-the-api/getting-started/create-a-ticket-with-the-api.md)
-
+* [PHP](getting-started-with-the-api/php/getting-started.md)
+  * [Initialize the client](getting-started-with-the-api/php/getting-started/initialize-the-client.md)
+  * [Add a form](getting-started-with-the-api/php/getting-started/add-a-form.md)
+  * [Create an article](getting-started-with-the-api/php/getting-started/create-an-article.md)
+* [JavaScript](getting-started-with-the-api/js/getting-started.md)
+  * [Initialize the client](getting-started-with-the-api/js/getting-started/initialize-the-client.md)
+  * [Add a form](getting-started-with-the-api/js/getting-started/add-a-form.md)
+  * [Create an article](getting-started-with-the-api/js/getting-started/create-an-article.md)
