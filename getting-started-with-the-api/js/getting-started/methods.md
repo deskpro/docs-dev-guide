@@ -186,6 +186,34 @@ client.del('/articles/{id}', params)
 ```
 {% endmethod %}
 
+### Batch
+Sends a batch request to the API.
+
+_DeskproClient::batch(requests) : Promise_
+
+{% method %}
+{% sample lang="js" %}
+```js
+const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
+
+const client = new DeskproClient('http://deskpro.company.com');
+client.setAuthKey(1, 'dev-admin-code');
+
+client.batch({
+  one: {
+    method: 'GET',
+    url: '/articles/105'
+  },
+  two: '/articles/106'
+}).then((resp) => {
+  console.log(resp.one.data);
+  console.log(resp.two.data);
+}).catch((err) => {
+  console.error(err.message);
+});
+```
+{% endmethod %}
+
 ### Request
 Sends a request to the API.
 
