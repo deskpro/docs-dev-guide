@@ -29,7 +29,7 @@ const httpClient = axios.create({
 const client = new DeskproClient('http://deskpro.company.com', httpClient);
 
 // Or use the setter method.
-// client->setHTTPClient(httpClient);
+// client.setHTTPClient(httpClient);
 ```
 {% endmethod %}
 
@@ -44,7 +44,7 @@ const logger = console.log;
 const client = new DeskproClient('http://deskpro.company.com', null, logger);
 
 // Or use the setter method.
-// client->setLogger(logger);
+// client.setLogger(logger);
 ```
 {% endmethod %}
 
@@ -61,12 +61,12 @@ const client = new DeskproClient('http://deskpro.company.com');
 // Use the setAuthKey method to authenticate using a key.
 const personId = 1;
 const authKey  = 'dev-admin-code';
-client->setAuthKey(personId, authKey);
+client.setAuthKey(personId, authKey);
 
 // Use the setAuthToken method to authenticate using a token.
 personId  = 1;
 authToken = 'AWJ2BQ7WG589PQ6S862TCGY4';
-client->setAuthToken(personId, authToken);
+client.setAuthToken(personId, authToken);
 ```
 {% endmethod %}
 
@@ -97,7 +97,7 @@ const params = {
   id:    101,
   limit: 25
 };
-client->get('/articles/{id}', params);
+client.get('/articles/{id}', params);
 ```
 {% endmethod %}
 
@@ -176,7 +176,7 @@ client.setAuthKey(1, 'dev-admin-code');
 const params = {
   id: 101
 };
-client->del('/articles/{id}', params)
+client.del('/articles/{id}', params)
   .then((resp) => {
     console.log(resp.data);
   })
@@ -209,7 +209,7 @@ const params = {
 const headers = {
   'X-Custom-Value': 'some value'
 }
-client->request('PUT', '/articles/{id}', body, params, headers)
+client.request('PUT', '/articles/{id}', body, params, headers)
   .then((resp) => {
     console.log(resp.data);
   })
