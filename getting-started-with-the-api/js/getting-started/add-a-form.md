@@ -3,7 +3,7 @@ Add a form
 Next, let's add a form to the page and get ready to handle it.
 
 {% method %}
-{% sample lang="php" %}
+{% sample lang="js" %}
 ```html
 <!DOCTYPE>
 <html>

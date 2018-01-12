@@ -3,7 +3,7 @@ Create an Article
 Now we have a form, we can handle when the user submits it and then pass it to the API for to handle and turn into an article.
 
 {% method %}
-{% sample lang="php" %}
+{% sample lang="js" %}
 ```html
 <!DOCTYPE>
 <html>

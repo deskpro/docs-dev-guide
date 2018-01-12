@@ -14,8 +14,8 @@ include(__DIR__ . '/vendor/autoload.php');
 // Pass the URL to your Deskpro instance when creating the client.
 $client = new DeskproClient('http://deskpro.company.com');
 
-// Many API methods require authentication. Set the ID of the user
-// to authenticate with and either the auth key or token.
+// `Many API methods require authentication. Set the ID of the user
+// to authenticate with and either the auth key or token.`
 $client->setAuthKey(1, 'dev-admin-code');
 // $client->setAuthToken(1, 'AWJ2BQ7WG589PQ6S862TCGY4');
 

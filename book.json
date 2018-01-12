@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api" ],
+    "plugins": [ "theme-api", "scripts", "toc" ],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -12,6 +12,11 @@
                     "lang": "go",
                     "name": "Go"
                 }
+            ]
+        },
+        "scripts": {
+            "files": [
+                "./scripts/site.js"
             ]
         }
     }
