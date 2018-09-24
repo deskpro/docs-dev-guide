@@ -19,7 +19,7 @@ There are two ways you can integrate Deskpro into your website:
 
 Deskpro has a powerful _apps_ platform that lets you define fully operational apps that work inside of the Deskpro interface. These apps can be very simple things, like just rendering a button, to very complex, like our JIRA integration.
 
-You can get starting writing apps in just a few minutes. If you're interested in writing apps, refer to the full [Deskpro Apps](https://deskpro.gitbook.io/dev-guide) guide.
+You can get starting writing apps in just a few minutes. If you're interested in writing apps, refer to the full [Deskpro Apps](https://deskpro.gitbook.io/deskpro-apps/) guide.
 
 ## API
 
