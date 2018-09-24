@@ -1,10 +1,8 @@
-Add a form
-==========
+# Add a form
+
 Next, let's add a form to the page and get ready to handle it.
 
-{% method %}
-{% sample lang="js" %}
-```html
+```markup
 <!DOCTYPE>
 <html>
   <head>
@@ -32,7 +30,7 @@ Next, let's add a form to the page and get ready to handle it.
                 title: form.elements['title'].value,
                 content: form.elements['content'].value
             };
-            
+
             console.log(body);
         });
     </script>
@@ -40,14 +38,12 @@ Next, let's add a form to the page and get ready to handle it.
 </html>
 ```
 
-{% common %}
 Open the `index.html` in your browser and open the debug console. Fill out and submit the form. You'll see a bunch of JSON output. Something like:
 
-```json
+```javascript
 {
     "title": "This is a title",
     "content": "This is the content."
 }
 ```
 
-{% endmethod %}

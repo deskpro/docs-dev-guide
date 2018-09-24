@@ -1,26 +1,20 @@
-Methods
-=======
+# Methods
+
 This document details the methods of the JavaScript client library.
 
-<!-- toc -->
+## Initializing the client
 
-### Initializing the client
 Begin by initializing an instance of `DeskproClient`, from the `@deskpro/deskpro-api-client-javascript` package, with the URL to your Deskpro instance.
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
 ```
-{% endmethod %}
 
 [Axios](https://github.com/axios/axios) is used to make HTTP requests. A default Axios client will be used by the library, but a custom instance may be provided.
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const httpClient = axios.create({
@@ -31,13 +25,10 @@ const client = new DeskproClient('http://deskpro.company.com', httpClient);
 // Or use the setter method.
 // client.setHTTPClient(httpClient);
 ```
-{% endmethod %}
 
 Requests may be logged by passing a function as the third constructor argument.
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const logger = console.log;
@@ -46,14 +37,12 @@ const client = new DeskproClient('http://deskpro.company.com', null, logger);
 // Or use the setter method.
 // client.setLogger(logger);
 ```
-{% endmethod %}
 
-### Authenticating
+## Authenticating
+
 Many API methods require authentication. Set the ID of the user to authenticate with and either the auth "key" or "token".
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -68,16 +57,14 @@ personId  = 1;
 authToken = 'AWJ2BQ7WG589PQ6S862TCGY4';
 client.setAuthToken(personId, authToken);
 ```
-{% endmethod %}
 
-### Get
+## Get
+
 Sends a GET request to the API.
 
-_DeskproClient::get(endpoint, params = {}) : Promise_
+_DeskproClient::get\(endpoint, params = {}\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -90,7 +77,7 @@ client.get('/articles')
   .catch((err) => {
     console.error(err.message);
   });
-  
+
 // Parameters are interpolated into the provided URL.
 // The next request will be made to "/articles/101?limit=25".
 const params = {
@@ -99,16 +86,14 @@ const params = {
 };
 client.get('/articles/{id}', params);
 ```
-{% endmethod %}
 
-### Post
+## Post
+
 Sends a POST request to the API.
 
-_DeskproClient::post(endpoint, body = null, params = {}) : Promise_
+_DeskproClient::post\(endpoint, body = null, params = {}\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -127,16 +112,14 @@ client.post('/articles', body)
     console.error(err.message);
   });
 ```
-{% endmethod %}
 
-### Put
+## Put
+
 Sends a PUT request to the API.
 
-_DeskproClient::put(endpoint, body = null, params = {}) : Promise_
+_DeskproClient::put\(endpoint, body = null, params = {}\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -158,16 +141,14 @@ client.put('/articles/{id}', body, params)
     console.error(err.message);
   });
 ```
-{% endmethod %}
 
-### Delete
+## Delete
+
 Sends a DELETE request to the API.
 
-_DeskproClient::del(endpoint, params = {}) : Promise_
+_DeskproClient::del\(endpoint, params = {}\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -184,16 +165,14 @@ client.del('/articles/{id}', params)
     console.error(err.message);
   });
 ```
-{% endmethod %}
 
-### Batch
+## Batch
+
 Sends a batch request to the API.
 
-_DeskproClient::batch(requests) : Promise_
+_DeskproClient::batch\(requests\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -212,16 +191,14 @@ client.batch({
   console.error(err.message);
 });
 ```
-{% endmethod %}
 
-### Request
+## Request
+
 Sends a request to the API.
 
-_DeskproClient::request(method, endpoint, body = null, params = {}, headers = {}) : Promise_
+_DeskproClient::request\(method, endpoint, body = null, params = {}, headers = {}\) : Promise_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -245,16 +222,14 @@ client.request('PUT', '/articles/{id}', body, params, headers)
     console.error(err.message);
   });
 ```
-{% endmethod %}
 
-### Default Headers
+## Default Headers
+
 Sets the headers sent with each request.
 
-_DeskproClient::setDefaultHeaders(defaultHeaders) : DeskproClient_
+_DeskproClient::setDefaultHeaders\(defaultHeaders\) : DeskproClient_
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -265,14 +240,12 @@ client.setDefaultHeaders({
   'X-Custom-Value': 'some value'
 });
 ```
-{% endmethod %}
 
-### Response
+## Response
+
 Each of the methods `get`, `post`, `put`, `delete`, `batch`, and `request` returns an object with the properties `data`, `meta`, and `linked`.
 
-{% method %}
-{% sample lang="js" %}
-```js
+```javascript
 const DeskproClient = require('@deskpro/deskpro-api-client-javascript');
 
 const client = new DeskproClient('http://deskpro.company.com');
@@ -285,19 +258,18 @@ client.get('/articles')
     console.log(resp.linked);
   });
 ```
-{% endmethod %}
 
-### Browser Usage
+## Browser Usage
+
 The client library may be used in the browser as well as Node. The library may be installed using `npm` or embedded in a document using the unpkg.com CDN.
 
-{% method %}
-```html
+```markup
 <!DOCTYPE>
 <html>
   <head>
     <!-- Import DeskproClient from node_modules -->
     <script src="node_modules/@deskpro/deskpro-api-client-javascript/dist/index.js"></script>
-    
+
     <!-- Or import it from CDN -->
     <!-- <script src="https://unpkg.com/@deskpro/deskpro-api-client-javascript@2.0.0/dist/index.js"></script> -->
   </head>
@@ -317,4 +289,4 @@ The client library may be used in the browser as well as Node. The library may b
   </body>
 </html>
 ```
-{% endmethod %}
+

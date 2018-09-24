@@ -1,33 +1,28 @@
-API Keys
-========
+# API Keys
 
 The most common way to use the API is with an _API Key_.
 
-<!-- toc -->
+An API Key can be defined from within Deskpro at _Admin -&gt; Apps -&gt; API Keys_. You can define as many API keys as you want.
 
-An API Key can be defined from within Deskpro at _Admin -> Apps -> API Keys_. You can define as many API keys as you want.
-
-![](/assets/Screen Shot 2017-11-09 at 14.36.29.png)
+![](../../.gitbook/assets/screen-shot-2017-11-09-at-14.36.29.png)
 
 The two important properties here are:
 
 * The _API Key Code_ is like a password. You use this in your API requests to authenticate the request.
 * The _Key Type_ option sets the user context for requests using this key. For example, if you set the agent to "Matthew", it means any API request you make with this API key will be run with all the permissions that Matthew normally has.
 
-
 To use an API key, send an `Authorization` header in the format of: `key your_api_key`. That's the constant string "`key`" followed by a space, followed by the API key as it appears in the admin interface.
 
-{% method %}
-{% sample lang="bash" %}
 Here’s an example call made to the `helpdesk/discover` endpoint:
+
 ```bash
 curl -H "Authorization: key 2:YWK2PGCS8CNW62SR8TBTBKWMY" \
     http://example.com/api/v2/me
 ```
 
-{% common %}
 The response will look something like this:
-```json
+
+```javascript
 {
     "data": {
         "auth_method": "api_key",
@@ -42,7 +37,6 @@ The response will look something like this:
     "linked": {}
 }
 ```
-{% endmethod %}
 
 ## FAQ
 
@@ -57,7 +51,6 @@ This is typically done by creating an API key bound to an administrator user who
 **Can I lock-down an API key so it can only do specific things?**
 
 Yes, this is done by whitelisting _tags_. See the tags section below.
-
 
 **What is a "superuser" API key?**
 

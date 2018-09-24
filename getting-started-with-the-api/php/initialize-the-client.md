@@ -1,9 +1,7 @@
-Initialize the Client
-=====================
+# Initialize the client
+
 Let's begin by initializing the API client in our `form.php` file. Copy this code:
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -28,10 +26,9 @@ try {
 }
 ```
 
-{% common %}
 Run this page in your browser and you'll see a bunch of JSON output. Something like:
 
-```
+```text
 Array
 (
     [0] => Array
@@ -40,7 +37,7 @@ Array
             [title] => "Mary Had a Little Lamb"
             ...
         )
-    
+
     [1] => Array
         (
             [id] => 2
@@ -50,7 +47,7 @@ Array
 )
 ```
 
-```
+```text
 Array
 (
     [pagination] => Array
@@ -63,4 +60,4 @@ Array
         )
 )
 ```
-{% endmethod %}
+

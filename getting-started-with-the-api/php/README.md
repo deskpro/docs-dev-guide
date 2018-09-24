@@ -1,8 +1,8 @@
-Getting Started With PHP
-========================
+# PHP
+
 Welcome to the Deskpro API. This section will guide you through creating an article form with PHP, from start to finish.
 
-The first step is to create an [API Key](/api-basics/auth/api-keys.md). Go to _Admin > Apps > API Keys_ to create an API Key for yourself.
+The first step is to create an [API Key](../../api-basics/auth/api-keys.md). Go to _Admin &gt; Apps &gt; API Keys_ to create an API Key for yourself.
 
 Next:
 
@@ -20,3 +20,4 @@ $ composer init -n --name example/article-form
 $ composer require deskpro/deskpro-api-client-php
 $ touch form.php
 ```
+

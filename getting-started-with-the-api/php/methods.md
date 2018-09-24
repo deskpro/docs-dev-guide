@@ -1,14 +1,11 @@
-Methods
-=======
+# Methods
+
 This document details the methods of the PHP client library.
 
-<!-- toc -->
+## Initializing the client
 
-### Initializing the client
 Begin by initializing an instance of `Deskpro\API\DeskproClient`, with the URL to your Deskpro instance.
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -48,14 +45,11 @@ $client = new DeskproClient('http://deskpro.company.com', null, $logger);
 // Or use the setter method.
 // $client->setLogger($logger);
 ```
-{% endmethod %}
 
+## Authenticating
 
-### Authenticating
 Many API methods require authentication. Set the ID of the user to authenticate with and either the auth "key" or "token".
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -72,15 +66,13 @@ $personId  = 1;
 $authToken = 'AWJ2BQ7WG589PQ6S862TCGY4';
 $client->setAuthToken($personId, $authToken);
 ```
-{% endmethod %}
 
-### Get
+## Get
+
 Sends a GET request to the API.
 
 `DeskproClientInterface::get($endpoint, array $params = []) : APIResponseInterface`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -104,15 +96,13 @@ $params = [
 ];
 $client->get('/articles/{id}', $params);
 ```
-{% endmethod %}
 
-### Post
+## Post
+
 Sends a POST request to the API.
 
 `DeskproClientInterface::post($endpoint, $body = null, array $params = []) : APIResponseInterface`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -132,15 +122,13 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
-### Put
+## Put
+
 Sends a PUT request to the API.
 
 `DeskproClientInterface::put($endpoint, $body = null, array $params = []) : APIResponseInterface`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -163,15 +151,13 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
-### Delete
+## Delete
+
 Sends a DELETE request to the API.
 
 `DeskproClientInterface::delete($endpoint, array $params = []) : APIResponseInterface`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -190,15 +176,13 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
-### Batch
+## Batch
+
 Sends a batch request to the API.
 
 `DeskproClientInterface::batch(array $requests) : APIResponseInterface[]`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -228,15 +212,13 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
-### Request
+## Request
+
 Sends a custom request to the API.
 
 `DeskproClientInterface::request($method, $endpoint, $body = null, array $params = [], array $headers = []) : APIResponseInterface`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -262,13 +244,11 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
-### Asynchronous Requests
+## Asynchronous Requests
+
 Each of the methods `get`, `post`, `put`, `delete`, `batch`, and `request` have asynchronous versions which return a promise.
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -298,13 +278,11 @@ $promise->then(function(APIResponseInterface $resp) {
 });
 $promise->wait();
 ```
-{% endmethod %}
 
-### Default Headers
+## Default Headers
+
 Sets the headers sent with each request.
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -317,17 +295,15 @@ $client->setDefaultHeaders([
     'X-Custom-Value' => 'foo'
 ]);
 ```
-{% endmethod %}
 
-### Response
+## Response
+
 Each of the methods `get`, `post`, `put`, `delete`, `batch`, and `request` returns an instance of `APIResponseInterface`.
 
 `APIResponseInterface::getData() : array`  
 `APIResponseInterface::getMeta() : array`  
 `APIResponseInterface::getLinked() : array`
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -345,12 +321,9 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
 
 For asynchronous requests, an instance of `APIResponseInterface` is passed to the resolver function.
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -365,13 +338,9 @@ $promise->then(function(APIResponseInterface $resp) {
 });
 $promise->wait();
 ```
-{% endmethod %}
 
-The `APIResponseInterface` interface implements [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php), 
-[Iterator](http://php.net/manual/en/class.iterator.php), and [Countable](http://php.net/manual/en/class.countable.php).
+The `APIResponseInterface` interface implements [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php), [Iterator](http://php.net/manual/en/class.iterator.php), and [Countable](http://php.net/manual/en/class.countable.php).
 
-{% method %}
-{% sample lang="php" %}
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -390,4 +359,4 @@ try {
     echo $e->getMessage();
 }
 ```
-{% endmethod %}
+

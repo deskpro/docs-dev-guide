@@ -1,9 +1,7 @@
-Add a form
-==========
-Next, let's add a form to the page and get ready to handle it.
+# Create an article
 
-{% method %}
-{% sample lang="php" %}
+Now we have a form, we can handle when the user submits it and then pass it to the API for to handle and turn into an article.
+
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -15,8 +13,14 @@ $client = new DeskproClient('http://deskpro.company.com');
 $client->setAuthKey(1, 'dev-admin-code');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // TODO handle the form
-    echo "We will fill this in later.";
+    $body = [
+        "title"   => $_POST["title"],
+        "content" => $_POST["content"]
+    ];
+    $resp = $client->post('/articles', $body);
+    $data = $resp->getData();
+
+    echo "Article with ID {$data['id']} has been accepted.";
     die();
 }
 ?>
@@ -32,4 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Submit</button>
 </form>
 ```
-{% endmethod %}
+
+Submitting the form should show you something like:
+
+```text
+Article with ID 107 has been accepted.
+```
+

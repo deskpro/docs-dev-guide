@@ -1,10 +1,8 @@
-Create an Article
-=================
+# Create an article
+
 Now we have a form, we can handle when the user submits it and then pass it to the API for to handle and turn into an article.
 
-{% method %}
-{% sample lang="js" %}
-```html
+```markup
 <!DOCTYPE>
 <html>
   <head>
@@ -32,11 +30,11 @@ Now we have a form, we can handle when the user submits it and then pass it to t
                 content_input_type: 'rte',
                 status: 'published'
             };
-            
+
             // Send the article body to the API.
             var client = new DeskproClient('http://deskpro.company.com');
             client.setAuthKey(1, 'dev-admin-code');
-            
+
             client.post('/articles', body)
                 .then(function(resp) {
                     console.log('Article created with ID ' + resp.data.id);
@@ -50,10 +48,9 @@ Now we have a form, we can handle when the user submits it and then pass it to t
 </html>
 ```
 
-{% common %}
 Submitting the form should show you something like this in your debug console:
 
-```
+```text
 Article created with ID 107
 ```
-{% endmethod %}
+

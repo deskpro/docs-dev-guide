@@ -1,10 +1,8 @@
-Initialize the Client
-=====================
+# Initialize the client
+
 Let's begin by creating the `index.html` file, and initializing the client. Copy this code:
 
-{% method %}
-{% sample lang="js" %}
-```html
+```markup
 <!DOCTYPE>
 <html>
   <head>
@@ -14,7 +12,7 @@ Let's begin by creating the `index.html` file, and initializing the client. Copy
     <script>
       // Pass the URL to your Deskpro instance when creating the client.
       var client = new DeskproClient('http://deskpro.company.com');
-      
+
       // Many API methods require authentication. Set the ID of the user
       // to authenticate with and either the auth key or token.
       client.setAuthKey(1, 'dev-admin-code');
@@ -32,10 +30,9 @@ Let's begin by creating the `index.html` file, and initializing the client. Copy
 </html>
 ```
 
-{% common %}
 Open the `index.html` in your browser and open the debug console. You'll see a bunch of JSON output. Something like:
 
-```json
+```javascript
 [
     {
         "id": 107,
@@ -49,4 +46,4 @@ Open the `index.html` in your browser and open the debug console. You'll see a b
     }
 ]
 ```
-{% endmethod %}
+
