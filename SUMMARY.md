@@ -32,6 +32,7 @@
   * [Initialize the client](getting-started-with-the-api/php/initialize-the-client.md)
   * [Add a form](getting-started-with-the-api/php/add-a-form.md)
   * [Create an article](getting-started-with-the-api/php/create-an-article.md)
+  * [Tickets](getting-started-with-the-api/php/tickets.md)
   * [Methods](getting-started-with-the-api/php/methods.md)
 * [JavaScript](getting-started-with-the-api/javascript/README.md)
   * [Initialize the client](getting-started-with-the-api/javascript/initialize-the-client.md)
