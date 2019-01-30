@@ -4,6 +4,8 @@
 
 ### Basic ticket
 
+If a ticket is created by a user you can run the following code:
+
 ```php
 <?php
 use Deskpro\API\DeskproClient;
@@ -11,14 +13,67 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
 try {
     $payload = [
         'agent' => 1,
+        'person' => 'joe@deskprodemo.com',
         'subject' => 'Test ticket',
+        'message' => [
+            'message' => 'Test message'
+        ]
+    ];
+    $resp = $client->post('/tickets', $payload);
+    print_r($resp->getData());
+    print_r($resp->getMeta());
+} catch (APIException $e) {
+    echo $e->getMessage();
+}
+```
+
+### Checking if the user exists
+
+If you are unsure the user that creates the ticket exists in Deskpro, you can run this code to check for it and create it otherwise:
+
+```php
+<?php
+use Deskpro\API\DeskproClient;
+use Deskpro\API\Exception\APIException;
+
+include (__DIR__ . '/vendor/autoload.php');
+
+$client = new DeskproClient('http://deskpro.company.com');
+
+$client->setAuthKey(1, 'dev-admin-code');
+
+$userEmail = 'testnewuser@deskprodemo.com';
+$userName = 'New User';
+try {
+    $params = ['primary_email' => $userEmail];
+    $resp = $client->get('/people', $params);
+    $users = $resp->getData();
+
+
+    if (count($users)) {
+        $userId = $users[0]['id'];
+    } else {
+        $payload = [
+            'name' => $userName,
+            'primary_email' => $userEmail
+        ];
+        $resp = $client->post('/people', $payload);
+        $user = $resp->getData();
+        $userId = $user['id'];
+    }
+
+    $payload = [
+        'agent' => 1,
+        'subject' => 'Test ticket with new user',
+        'person' => $userId,
+        'department' => 1,
         'message' => [
             'message' => 'Test message'
         ]
@@ -42,7 +97,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
@@ -75,7 +130,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
@@ -108,7 +163,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
@@ -147,7 +202,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
@@ -172,7 +227,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
@@ -193,7 +248,7 @@ use Deskpro\API\Exception\APIException;
 
 include (__DIR__ . '/vendor/autoload.php');
 
-$client = new DeskproClient('http://deskpro5.local');
+$client = new DeskproClient('http://deskpro.company.com');
 
 $client->setAuthKey(1, 'dev-admin-code');
 
