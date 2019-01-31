@@ -191,6 +191,63 @@ try {
 
 ### Ticket with attachments
 
+To post a message with an attachment, you need:
+
+* First to post the attachment and create a blob.
+* Then create the ticket
+* And finally add a message to this ticket with the attachement
+
+```php
+<?php
+use Deskpro\API\DeskproClient;
+use Deskpro\API\Exception\APIException;
+
+include (__DIR__ . '/vendor/autoload.php');
+
+$client = new DeskproClient('http://deskpro.company.com');
+
+$client->setAuthKey('1:dev-admin-code');
+
+$path = __DIR__.'/dummy.zip';
+
+try {
+    $payload = [
+        'multipart' => [
+            [
+                'name' => 'file',
+                'FileContents' => fopen($path, 'r'),
+                'contents' => fopen($path, 'r'),
+                'filename' => 'dummy.zip'
+            ]
+        ]
+    ];
+    $blob = $client->post('/blobs/temp', $payload);
+
+    $payload = [
+        'agent' => 1,
+        'person' => 'joe@deskprodemo.com',
+        'subject' => 'Test ticket with attachment'
+    ];
+    $ticket = $client->post('/tickets', $payload);
+
+    $payload = [
+        'message' => 'Ticket message with attachment',
+        'attachments' => [
+            $blob['blob_id'] => [
+                'blob_auth' => $blob['blob_auth']
+            ]
+        ],
+        'person' => 'joe@deskprodemo.com'
+    ];
+    $resp = $client->post('tickets/'.$ticket['id'].'/messages', $payload);
+    print_r($resp->getData());
+    print_r($resp->getMeta());
+} catch (APIException $e) {
+    echo $e->getMessage();
+}
+
+```
+
 ## Get Tickets
 
 ### Tickets from a user
