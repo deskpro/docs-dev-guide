@@ -14,8 +14,10 @@ $client->setAuthKey(1, 'dev-admin-code');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $body = [
-        "title"   => $_POST["title"],
-        "content" => $_POST["content"]
+        "title"              => $_POST["title"],
+        "content"            => $_POST["content"],
+        "content_input_type" => "rte",
+        "status"             => "published"
     ];
     $resp = $client->post('/articles', $body);
     $data = $resp->getData();
